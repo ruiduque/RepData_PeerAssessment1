@@ -4,6 +4,7 @@ output:
   html_document:
     fig_caption: yes
     keep_md: yes
+    toc: yes
 ---
 
 ```{r setup, include=FALSE}
