@@ -104,7 +104,7 @@ ggplot2::qplot(steps_day$steps,
                fill = I("dodgerblue"))
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
+![](PA1_template_files/figure-html/Total Steps p/day Histogram-1.png)<!-- -->
 
 #### 2.3 Mean and median of the total number of steps taken per day
 
@@ -141,7 +141,7 @@ plot(mean_interval$interval,
 abline(v=seq(0,25000,100) , col="grey" , lwd=0.6)
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-7-1.png)<!-- -->
+![](PA1_template_files/figure-html/Avg steps by 5 min interval-1.png)<!-- -->
 
 #### 3.2 Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
@@ -183,7 +183,7 @@ miss_var_summary(activity_df)
 vis_miss(activity_df)
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-9-1.png)<!-- -->
+![](PA1_template_files/figure-html/Missing data stats-1.png)<!-- -->
 
 ```r
 # No NA's missing
@@ -233,7 +233,7 @@ ggplot2::qplot(steps_day_new$steps,
                fill = I("dodgerblue"))
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-11-1.png)<!-- -->
+![](PA1_template_files/figure-html/Total Steps p/day Histogram no nas-1.png)<!-- -->
 
 Are there any differences between between the estimates from the first part of the assignment? What is the impact of imputing missing data on the estimates of the total daily number of steps? To answer these questions, lets compare the distribution of the data before and after imputing missing values:
 
@@ -310,4 +310,4 @@ ggplot(mean5interval, aes(x = interval, y =  steps, colour = weekday)) +
         facet_grid(weekday~.)
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-14-1.png)<!-- -->
+![](PA1_template_files/figure-html/Activity patterns weekday vs weekend-1.png)<!-- -->

@@ -57,7 +57,7 @@ head(steps_day)
 #### 2.2 Histogram of the total number of steps taken each day
 
 
-```{r}
+```{r Total Steps p/day Histogram}
 ggplot2::qplot(steps_day$steps,
                geom = "histogram",
                binwidth = 5000,
@@ -81,7 +81,7 @@ The average number of steps taken each day was 10766 and the median was 10765.
 ## 3. What is the average daily activity pattern?
 
 #### 3.1 Plot of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis):
-```{r}
+```{r Avg steps by 5 min interval}
 mean_interval <- aggregate(steps ~ interval, activity_df,mean)
 
 plot(mean_interval$interval,
@@ -113,7 +113,7 @@ The 5 minutes interval with the maximum number of steps is interval `r max_intv`
 
 For this sections, I will be using a stats package that provides special functions to deal with missing data: "naniar".
 
-```{r}
+```{r Missing data stats}
 library(naniar)
 
 no_observations <- NROW(activity_df$steps)
@@ -144,7 +144,7 @@ miss_var_summary(activity_no_nas_df)
 
 ### 4.4 Histogram of the total number of steps taken each day after removing NA's
 
-```{r}
+```{r Total Steps p/day Histogram no nas}
 
 # Re-calculate steps by day after imputing data
 steps_day_new <- aggregate(steps~date, activity_no_nas_df, sum)
@@ -190,7 +190,7 @@ str(activity_no_nas_df)
 
 #### 5.2 Time series plot of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis).  
 
-```{r}
+```{r Activity patterns weekday vs weekend}
 library(ggplot2)
 
 mean5interval <- aggregate(steps ~ interval + weekday, activity_no_nas_df,mean)
